@@ -1,0 +1,31 @@
+%heading {
+  font-family: $font-secondary;
+  font-weight: 400;
+}
+
+.heading {
+  &-1 {
+    @extend %heading;
+  }
+
+  &-2 {
+    @extend %heading;
+  }
+
+  &-3 {
+    @extend %heading;
+  }
+
+  &-4 {
+    font-size: 2rem;
+    @extend %heading;
+
+    &--light {
+      color: $color-gray-light-1;
+    }
+
+    &--dark {
+      color: $color-gray-dark-1;
+    }
+  }
+}
