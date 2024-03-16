@@ -18,14 +18,31 @@ body {
 .container {
   display: grid;
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
-  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
-  font-size: 1.6rem; }
+  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
   .container > * {
     border: 3px solid black;
     padding: 2rem; }
 
 .features {
-  grid-column: center-start / center-end; }
+  grid-column: center-start / center-end;
+  margin: 15rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 6rem;
+  align-items: flex-start; }
+
+.feature {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  row-gap: 1.2rem;
+  column-gap: 2rem; }
+  .feature__icon {
+    fill: #ffa500;
+    width: 4.5rem;
+    height: 4.5rem;
+    grid-row: 1 / span 2; }
+  .feature__text {
+    font-size: 1.6rem; }
 
 .footer {
   grid-column: full-start / full-end; }
@@ -51,3 +68,14 @@ body {
 
 .tours {
   grid-column: center-start / center-end; }
+
+.heading-1, .heading-2, .heading-3, .heading-4 {
+  font-family: "Lato", sans-serif;
+  font-weight: 400; }
+
+.heading-4 {
+  font-size: 2rem; }
+  .heading-4--light {
+    color: #f5f5f5; }
+  .heading-4--dark {
+    color: #50493a; }
