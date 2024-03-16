@@ -11,6 +11,43 @@ html {
 
 body {
   font-family: "Montserrat", sans-serif;
-  color: #696456;
+  color: #635e52;
   font-weight: 300;
   line-height: 1.6; }
+
+.container {
+  display: grid;
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  font-size: 1.6rem; }
+  .container > * {
+    border: 3px solid black;
+    padding: 2rem; }
+
+.features {
+  grid-column: center-start / center-end; }
+
+.footer {
+  grid-column: full-start / full-end; }
+
+.gallery {
+  grid-column: full-start / full-end; }
+
+.header {
+  grid-column: full-start / col-end 6; }
+
+.sidebar {
+  grid-row: 1 / -1;
+  grid-column: sidebar-start / sidebar-end; }
+
+.testimonial__pictures {
+  grid-column: full-start / col-end 4; }
+
+.testimonial__content {
+  grid-column: col-start 5 / full-end; }
+
+.top-destinations {
+  grid-column: col-start 7 / full-end; }
+
+.tours {
+  grid-column: center-start / center-end; }
