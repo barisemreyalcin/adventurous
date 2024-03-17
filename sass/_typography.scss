@@ -6,6 +6,9 @@
 .heading {
   &-1 {
     @extend %heading;
+    font-size: 4.4rem;
+    line-height: 1;
+    color: $color-gray-light-1;
   }
 
   &-2 {
@@ -29,7 +32,7 @@
 
     font-size: 1.6rem;
     text-transform: uppercase;
-    color: $color-gray-dark-2;
+    color: $color-primary;
   }
 
   &-4 {
