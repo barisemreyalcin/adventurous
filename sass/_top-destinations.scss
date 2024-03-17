@@ -1,3 +1,33 @@
 .top-destinations {
+  background-color: $color-secondary-dark;
+  padding: 2.4rem;
+
   grid-column: col-start 7 / full-end;
+
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  row-gap: 2rem;
+}
+
+.top-destination {
+  display: grid;
+  grid-template-columns: min-content max-content;
+  align-items: center;
+  column-gap: 1.6rem;
+  row-gap: 5vh;
+
+  &__img {
+    width: 9rem;
+    border-radius: 50%;
+    display: block;
+  }
+
+  &__adventurers {
+    text-transform: uppercase;
+    color: $color-gray-light-2;
+    font-size: 1.4rem;
+    margin-top: -2px;
+  }
 }

@@ -232,7 +232,30 @@ body {
   margin-bottom: 3.2rem; }
 
 .top-destinations {
-  grid-column: col-start 7 / full-end; }
+  background-color: #315b7e;
+  padding: 2.4rem;
+  grid-column: col-start 7 / full-end;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  row-gap: 2rem; }
+
+.top-destination {
+  display: grid;
+  grid-template-columns: min-content max-content;
+  align-items: center;
+  column-gap: 1.6rem;
+  row-gap: 5vh; }
+  .top-destination__img {
+    width: 9rem;
+    border-radius: 50%;
+    display: block; }
+  .top-destination__adventurers {
+    text-transform: uppercase;
+    color: #b9b9b9;
+    font-size: 1.4rem;
+    margin-top: -2px; }
 
 .tours {
   grid-column: center-start / center-end;
