@@ -1,3 +1,80 @@
 .tours {
   grid-column: center-start / center-end;
+
+  margin: 15rem 0;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 6.4rem;
+}
+
+.tour {
+  background-color: $color-gray-light-1;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 3.2rem;
+
+  &__img {
+    width: 100%;
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    z-index: 1;
+  }
+
+  &__map {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: $color-primary;
+    z-index: 2;
+    justify-self: flex-end;
+    margin: 0.8rem;
+    cursor: pointer;
+  }
+
+  &__name {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    align-self: flex-end;
+    justify-self: center;
+    width: 80%;
+    transform: translateY(50%);
+    z-index: 3;
+
+    font-family: $font-secondary;
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-align: center;
+    padding: 1.2rem 2.4rem;
+    background-color: $color-secondary-dark;
+    color: #fff;
+  }
+
+  &__countries,
+  &__cities {
+    margin-top: 2rem;
+  }
+
+  &__countries,
+  &__cities,
+  &__price,
+  &__days {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.4rem;
+    margin-left: 2rem;
+
+    svg {
+      fill: $color-primary;
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  &__btn {
+    grid-column: 1 / -1;
+  }
 }
