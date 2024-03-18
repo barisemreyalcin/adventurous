@@ -5,6 +5,13 @@
 
   display: flex;
   justify-content: center;
+
+  @media only screen and (max-width: $breakpoint-lg) {
+    grid-row: 1 / 2;
+    grid-column: full-start / full-end;
+    justify-content: end;
+    align-items: center;
+  }
 }
 
 .nav-btn {
@@ -30,5 +37,18 @@
 
   &::after {
     transform: translateY(1.3rem);
+  }
+
+  @media only screen and (max-width: $breakpoint-lg) {
+    transform: translateY(0);
+    transform: translateX(-2rem);
+
+    &::before {
+      transform: translateY(-1.2rem);
+    }
+
+    &::after {
+      transform: translateY(1rem);
+    }
   }
 }

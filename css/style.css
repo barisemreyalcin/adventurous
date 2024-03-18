@@ -8,6 +8,9 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 50%; } }
 
 body {
   font-family: "Montserrat", sans-serif;
@@ -19,6 +22,13 @@ body {
   display: grid;
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
+  @media only screen and (max-width: 62.5em) {
+    .container {
+      grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+      grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; } }
+  @media only screen and (max-width: 53.125em) {
+    .container {
+      grid-template-rows: 6rem calc(100vh - 6rem); } }
 
 .features {
   grid-column: center-start / center-end;
@@ -27,6 +37,10 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   gap: 6rem;
   align-items: flex-start; }
+  @media only screen and (max-width: 40.625em) {
+    .features {
+      margin: 6.4rem 0;
+      gap: 3.2rem; } }
 
 .feature {
   display: grid;
@@ -141,10 +155,16 @@ body {
   padding: 6.4rem;
   padding-top: 4rem;
   display: grid;
-  grid-template-rows: 1fr min-content 6rem 1fr;
-  grid-template-columns: max-content;
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+  grid-template-columns: minmax(min-content, max-content);
   justify-content: center;
   row-gap: 1.6rem; }
+  @media only screen and (max-width: 53.125em) {
+    .header {
+      grid-column: full-start / full-end; } }
+  @media only screen and (max-width: 40.625em) {
+    .header {
+      padding: 4.8rem; } }
   .header__logo {
     height: 10rem;
     justify-self: center; }
@@ -167,9 +187,11 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 2.4rem;
+    align-items: center;
     justify-items: center; }
     .header__seenon-logos img {
-      height: 2.5rem;
+      max-height: 2.5rem;
+      max-width: 100%;
       filter: brightness(75%); }
 
 .sidebar {
@@ -178,6 +200,12 @@ body {
   background-color: #ffa500;
   display: flex;
   justify-content: center; }
+  @media only screen and (max-width: 62.5em) {
+    .sidebar {
+      grid-row: 1 / 2;
+      grid-column: full-start / full-end;
+      justify-content: end;
+      align-items: center; } }
 
 .nav-btn {
   border: none;
@@ -196,6 +224,14 @@ body {
     transform: translateY(-1.5rem); }
   .nav-btn::after {
     transform: translateY(1.3rem); }
+  @media only screen and (max-width: 62.5em) {
+    .nav-btn {
+      transform: translateY(0);
+      transform: translateX(-2rem); }
+      .nav-btn::before {
+        transform: translateY(-1.2rem); }
+      .nav-btn::after {
+        transform: translateY(1rem); } }
 
 .testimonial__pictures {
   grid-column: full-start / col-end 4;
@@ -204,12 +240,20 @@ body {
   grid-template-columns: repeat(6, 1fr);
   align-items: center;
   background-image: linear-gradient(rgba(255, 165, 0, 0.2), rgba(255, 165, 0, 0.5)), url(../img/tour-img-3.jpg); }
+  @media only screen and (max-width: 53.125em) {
+    .testimonial__pictures {
+      grid-column: full-start / full-end;
+      padding: 6.4rem; } }
 
 .testimonial__img-1 {
   width: 100%;
   grid-column: 2 / -2;
   grid-row: 2 / -2;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15); }
+  @media only screen and (max-width: 53.125em) {
+    .testimonial__img-1 {
+      grid-column: 1 / 5;
+      grid-row: 1 / -1; } }
 
 .testimonial__img-2 {
   width: 115%;
@@ -217,6 +261,10 @@ body {
   grid-row: 4 / 6;
   z-index: 10;
   box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.3); }
+  @media only screen and (max-width: 53.125em) {
+    .testimonial__img-2 {
+      width: 100%;
+      grid-row: 1 / -1; } }
 
 .testimonial__content {
   grid-column: col-start 5 / full-end;
@@ -226,6 +274,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start; }
+  @media only screen and (max-width: 53.125em) {
+    .testimonial__content {
+      grid-column: full-start / full-end;
+      grid-row: 5; } }
 
 .testimonial__text {
   font-size: 1.6rem;
@@ -240,21 +292,30 @@ body {
   justify-content: center;
   justify-items: center;
   row-gap: 2rem; }
+  @media only screen and (max-width: 53.125em) {
+    .top-destinations {
+      grid-column: full-start / full-end; } }
 
 .top-destination {
   display: grid;
   grid-template-columns: min-content max-content;
   align-items: center;
   column-gap: 1.6rem;
-  row-gap: 5vh; }
+  row-gap: 4vh; }
+  @media only screen and (max-width: 53.125em) {
+    .top-destination {
+      grid-template-columns: repeat(3, min-content max-content); } }
+  @media only screen and (max-width: 40.625em) {
+    .top-destination {
+      grid-template-columns: min-content max-content; } }
   .top-destination__img {
-    width: 9rem;
+    width: 7.5rem;
     border-radius: 50%;
     display: block; }
   .top-destination__adventurers {
     text-transform: uppercase;
-    color: #b9b9b9;
-    font-size: 1.4rem;
+    color: #f5f5f5;
+    font-size: 1rem;
     margin-top: -2px; }
 
 .tours {
@@ -263,6 +324,10 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   gap: 6.4rem; }
+  @media only screen and (max-width: 40.625em) {
+    .tours {
+      margin: 6.4rem 0;
+      gap: 3.2rem; } }
 
 .tour {
   background-color: #f5f5f5;

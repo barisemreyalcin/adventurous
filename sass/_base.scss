@@ -16,6 +16,12 @@ $color-gray-dark-2: #635e52;
 $font-primary: "Montserrat", sans-serif;
 $font-secondary: "Lato", sans-serif;
 
+// RESPONSIVE BREAKPOINTS
+$breakpoint-xlg: 75em; // 1200px
+$breakpoint-lg: 62.5em; // 1000px
+$breakpoint-md: 53.125em; // 850px
+$breakpoint-sm: 40.625em; // 650px
+
 *,
 *::before,
 *::after {
@@ -27,6 +33,10 @@ $font-secondary: "Lato", sans-serif;
 html {
   box-sizing: border-box;
   font-size: 62.5%; // 10px
+
+  @media only screen and (max-width: $breakpoint-xlg) {
+    font-size: 50%; // 8px
+  }
 }
 
 body {
@@ -45,4 +55,19 @@ body {
     repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
     [center-end]
     minmax(6rem, 1fr) [full-end];
+
+  @media only screen and (max-width: $breakpoint-lg) {
+    grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+
+    grid-template-columns:
+      [full-start] minmax(6rem, 1fr)
+      [center-start]
+      repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+      [center-end]
+      minmax(6rem, 1fr) [full-end];
+  }
+
+  @media only screen and (max-width: $breakpoint-md) {
+    grid-template-rows: 6rem calc(100vh - 6rem);
+  }
 }

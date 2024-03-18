@@ -9,6 +9,10 @@
   justify-content: center;
   justify-items: center;
   row-gap: 2rem;
+
+  @media only screen and (max-width: $breakpoint-md) {
+    grid-column: full-start / full-end;
+  }
 }
 
 .top-destination {
@@ -16,18 +20,26 @@
   grid-template-columns: min-content max-content;
   align-items: center;
   column-gap: 1.6rem;
-  row-gap: 5vh;
+  row-gap: 4vh;
+
+  @media only screen and (max-width: $breakpoint-md) {
+    grid-template-columns: repeat(3, min-content max-content);
+  }
+
+  @media only screen and (max-width: $breakpoint-sm) {
+    grid-template-columns: min-content max-content;
+  }
 
   &__img {
-    width: 9rem;
+    width: 7.5rem;
     border-radius: 50%;
     display: block;
   }
 
   &__adventurers {
     text-transform: uppercase;
-    color: $color-gray-light-2;
-    font-size: 1.4rem;
+    color: $color-gray-light-1;
+    font-size: 1rem;
     margin-top: -2px;
   }
 }
